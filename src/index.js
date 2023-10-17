@@ -44,10 +44,16 @@ console.log('Proje açıldı!')
 
 /* Kodlar Buradan aşağıya */
 
-const navItems = document.querySelectorAll(".italic");
-navItems.forEach(navItem => {
-  navItem.style.fontStyle = "italic";
-});
+const navItems = document.querySelectorAll("header nav a");
+for (let i = 0; i < navItems.length; i++) {
+  navItems[i].className = "italic"
+}
+
+const navaIcerik = Object.values(siteContent.nav);
+
+for (let i = 0; i < navItems.length; i++) {
+  navItems[i].textContent = navaIcerik[i];
+}
 
 
 document.getElementById("logo-img").src = siteContent["images"]["logo-img"];
